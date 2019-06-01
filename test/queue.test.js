@@ -12,16 +12,16 @@ describe("queue", () => {
   });
 
   describe("enqueue", () => {
-    it("should insert person into tail of array", () => {
+    it("should enqueue person into array", () => {
       expect(queue.enqueue("Bob")).toEqual(["Bob"]);
     });
 
-    it("should insert two or more people into tail of array", () => {
+    it("should enqueue two or more people in an order into array", () => {
       queue.enqueue("Bob");
       expect(queue.enqueue("Sarah")).toEqual(["Bob", "Sarah"]);
     });
 
-    it("should add, remove and add people", () => {
+    it("should add, remove and add people in an order into array", () => {
       queue.enqueue("Bob");
       queue.dequeue();
       expect(queue.enqueue("Sarah")).toEqual(["Sarah"]); 
@@ -29,12 +29,12 @@ describe("queue", () => {
   });
   
   describe("dequeue", () => {
-    it("should remove person from head of array", () => {
+    it("should remove person from array", () => {
       queue.enqueue("Bob");
       expect(queue.dequeue()).toEqual("Bob");
     })
 
-    it("should remove two or more people from head of array", () => {
+    it("should remove two or more people in an order from array", () => {
       queue.enqueue("Bob");
       queue.enqueue("Sarah");
       queue.dequeue();
@@ -43,13 +43,13 @@ describe("queue", () => {
   });
 
   describe('peek', () => {
-    it('should return the first element of the array', () => {
+    it('should return the first element of array', () => {
       queue.enqueue("Bob");
       queue.enqueue("Sarah");
       expect(queue.peek()).toEqual("Bob");
     });
 
-    it('should return the first element of the array after dequeue', () => {
+    it('should return the first element of array after dequeue', () => {
       queue.enqueue("Bob");
       queue.enqueue("Sarah");
       queue.dequeue();

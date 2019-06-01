@@ -45,6 +45,7 @@ describe('stack', () => {
 
   describe('peek', () => {
     it('should return undefined if the array is empty', () => {
+      // https://jest-bot.github.io/jest/docs/expect.html#tobeundefined
       expect(stack.peek()).toBeUndefined();
     });
 
