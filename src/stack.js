@@ -13,6 +13,6 @@ module.exports = class Stack {
   }
 
   peek() {
-    return this.array[0];
+    return this.array[this.array.length - 1];
   }
-}
+};
